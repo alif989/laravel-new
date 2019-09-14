@@ -14,23 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-/*
-Route::any('login','LoginController@index')->name('login');
-Route::get('registration','RegistrationController@index')->name('registration');
-Route::get('reports','ReportsController@index')->name('reports');
-Route::get('crud','CrudController@create')->name('crud');
-Route::post('store','CrudController@store')->name('store');
-Route::any('user-list','CrudController@user_list')->name('user-list');
-Route::any('edit','CrudController@edit')->name('edit');
-Route::post('update','CrudController@update')->name('update');
-Route::post('delete','CrudController@delete')->name('delete');
-Route::get('test',[
-    'middleware' => 'Test:this is middleware',
-    'uses' => 'TestController@index',
-]);
-Route::post('test','CrudController@delete')->name('delete');
-*/
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test_auth', 'HomeController@index')->name('test_auth');
+Route::get('add-product', 'product\ProductController@index')->name('add-product');
+Route::post('store', 'product\ProductController@store')->name('store');
+Route::get('product-list', 'product\ProductController@get_product')->name('product-list');
+Route::get('menu', 'product\ProductController@get_menu')->name('menu');

@@ -1,3 +1,4 @@
+
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
@@ -31,8 +32,18 @@
                 </ul>
             </li>
             <li>
+                @foreach($list as $value)
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">{{$value->menu_name}}</span><span class="fa arrow"></span></a>
+                @endforeach
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="{{url('add-product')}}">Add product</a></li>
+                    <li><a href="{{url('product-list')}}">Product List</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
             </li>
+
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -165,61 +176,8 @@
             <li class="active">
                 <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li><a href="table_basic.html">Static Tables</a></li>
-                    <li><a href="table_data_tables.html">Data Tables</a></li>
-                    <li><a href="table_foo_table.html">Foo Tables</a></li>
-                    <li><a href="jq_grid.html">jqGrid</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li><a href="ecommerce_products_grid.html">Products grid</a></li>
-                    <li><a href="ecommerce_product_list.html">Products list</a></li>
-                    <li><a href="ecommerce_product.html">Product edit</a></li>
-                    <li><a href="ecommerce_product_detail.html">Product detail</a></li>
-                    <li><a href="ecommerce-cart.html">Cart</a></li>
-                    <li><a href="ecommerce-orders.html">Orders</a></li>
-                    <li><a href="ecommerce_payments.html">Credit Card form</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
-                    <li><a href="slick_carousel.html">Slick Carousel</a></li>
-                    <li><a href="carousel.html">Bootstrap Carousel</a></li>
 
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li>
-                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
 
-                        </ul>
-                    </li>
-                    <li><a href="#">Second Level Item</a></li>
-                    <li>
-                        <a href="#">Second Level Item</a></li>
-                    <li>
-                        <a href="#">Second Level Item</a></li>
-                </ul>
-            </li>
             <li>
                 <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
             </li>
