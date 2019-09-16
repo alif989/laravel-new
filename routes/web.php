@@ -23,3 +23,4 @@ Route::get('add-product', 'product\ProductController@index')->name('add-product'
 Route::post('store', 'product\ProductController@store')->name('store');
 Route::get('product-list', 'product\ProductController@get_product')->name('product-list');
 Route::get('menu', 'product\ProductController@get_menu')->name('menu');
+Route::get('menu-view','MenuController@manageMenu')->name('menu-view');
