@@ -13,10 +13,24 @@ class MenuController extends Controller
     public function manageMenu(){
         $arr =array();
         $parents =  DB::table('menus')
+            ->where('parents_menu_id' , '=' ,0)
             ->get();
        // dd($parents);
         foreach ($parents as $parent  ){
-            if
+            $parent_menu = array();
+            $parent_menu['menu_id'] =$parent->menu_id;
+            $parent_menu['menu_name'] =$parent->menu_name;
+            $child =DB::table('menus')
+                ->where('parents_menu_id' , '=', $parent->menu_id )
+                ->get()->toArray();
+           // dd($child);
+            if( count($child)>0){
+                $parent_menu['child'] = $this->getchildrecursion($child);
+            }
+            else{
+                $parent_menu['child'] = array();
+            }
+            $arr[]=$parent_menu;
            // dd($arr);
         }
 
