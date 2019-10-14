@@ -8,7 +8,7 @@ use App\Http\Requests;
 use Auth;
 use DB;
 use App\Menu;
-class MenuController extends Controller
+class MenuController23092019 extends Controller
 {
 //    public function manageMenu(){
 //        $categories =  DB::table('menus')
@@ -60,8 +60,9 @@ class MenuController extends Controller
      * @param $arr
      */
     public function doRecursion($a, $k = ''){
+       // echo "<pre>";print_r($a);exit();
         if(is_array($a)){
-            if($k != '') echo '<li>'.$k.'</li>';
+            //if($k != '') echo '<li>'.$k.'</li>';
             echo '<ul>';
             foreach ($a as $key => $coa){
                 $this->doRecursion($coa, $key);
